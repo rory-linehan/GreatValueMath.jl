@@ -1,0 +1,8 @@
+name = "GreatValueMath"
+uuid = "3ca627b9-f7d4-4c9f-8e86-0f260eb7cb52"
+authors = ["Rory Linehan <rorylinehan@protonmail.ch>"]
+version = "0.1.0"
+
+[deps]
+DataFrames = "a93c6f00-e57d-5684-b7b6-d8193f3e46c0"
+Statistics = "10745b16-79ce-11e8-11f9-7d13ad32a3b2"
