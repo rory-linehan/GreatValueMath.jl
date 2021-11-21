@@ -39,4 +39,7 @@ function theil_sen_linear_regression(data::DataFrame, x::String, y::String)
     end
 end
 
+export normalize
+export theil_sen_linear_regression
+
 end # module
