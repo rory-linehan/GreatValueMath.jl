@@ -4,11 +4,13 @@ using Statistics
 using DataFrames
 
 # min-max feature scaling
-function normalize(data::DataFrame, field::String)::DataFrame
-  ma = maximum(data[:, field])
-  mi = minimum(data[:, field])
-  for (index, i) in enumerate(eachrow(data))
-    data[index, field] = (i[field] - mi)/(ma - mi)
+function normalize(data::DataFrame, field::String)
+  if >(0, nrow(data))
+    ma = maximum(data[:, field])
+    mi = minimum(data[:, field])
+    for (index, i) in enumerate(eachrow(data))
+      data[index, field] = (i[field] - mi)/(ma - mi)
+    end
   end
   return data
 end
