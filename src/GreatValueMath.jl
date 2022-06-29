@@ -5,12 +5,10 @@ using DataFrames
 
 # min-max feature scaling
 function normalize(data::DataFrame, field::String)
-  if >(0, nrow(data))
-    ma = maximum(data[:, field])
-    mi = minimum(data[:, field])
-    for (index, i) in enumerate(eachrow(data))
-      data[index, field] = (i[field] - mi)/(ma - mi)
-    end
+  ma = maximum(data[:, field])
+  mi = minimum(data[:, field])
+  for (index, i) in enumerate(eachrow(data))
+    data[index, field] = (i[field] - mi)/(ma - mi)
   end
   return data
 end
